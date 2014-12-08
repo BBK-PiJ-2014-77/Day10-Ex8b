@@ -4,28 +4,37 @@ package Classes;
  * Created by ubcg49ac on 06/12/2014.
  */
 public class OverAnimal {
-    String name = null;
-    ReproductiveStrategy Strategy = null;
+    private String name = null;
+    private ReproductiveStrategy Strategy = null;
+    private String noise = null;
 
-    public OverAnimal(String name, String Strategy){
+    public OverAnimal(String name, String Strategy, String noise){
 
         this.name = name;
+        this.noise = noise;
 
         if (Strategy.equals("EggLaying")){
             this.Strategy = new EggLaying();
         }
+        else if (Strategy.equals("LiveBirth")){
+            this.Strategy = new LiveBirth();
+        }
     }
 
     public void call(){
-        System.out.println(this.name + " coming");
+        System.out.println(this.toString() + " coming");
     }
 
     public String toString(){
-        return this.name;
+     return this.name;
     }
 
     public void Strategy(){
         this.Strategy.reproduce();
+    }
+
+    public void MakeSound(){
+        System.out.println(noise);
     }
 
 }

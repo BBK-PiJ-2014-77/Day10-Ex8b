@@ -6,13 +6,13 @@ package Classes;
 public class FlyingAnimal extends OverAnimal {
 
 
-    public FlyingAnimal(String name, String Strategy) {
-        super(name, Strategy );
+    public FlyingAnimal(String name, String Strategy, String noise) {
+        super(name, Strategy, noise );
     }
 
     @Override
     public void call(){
-        System.out.println(this.name + " coming when tired.");
+        System.out.println(this.toString() + " coming when tired.");
     }
 
 
